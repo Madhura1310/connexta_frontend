@@ -7,13 +7,16 @@
 
 # testing
 /coverage
-
-# production
+.env
+# production 
 /build
+
 
 # misc
 .DS_Store
-.env.local
+.env.localcd backend
+rm -rf .git
+
 .env.development.local
 .env.test.local
 .env.production.local
