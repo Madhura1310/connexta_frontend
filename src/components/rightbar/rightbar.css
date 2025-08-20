@@ -56,22 +56,32 @@
     font-weight: 300;
     color: #555;
 }
-.rightbarFollowings{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.rightbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduce large space between friends */
 }
-.rightbarFollowing{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    cursor: pointer;
+
+.rightbarFollowing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  margin-bottom: 10px;
+  text-align: center;
 }
-.rightbarFollowingImg{
-  width: 100px;
-  height: 100px;
+
+.rightbarFollowingImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 5px; 
+}
+
+.rightbarFollowingName {
+  font-size: 14px;
+  color: green;
+  margin-top: 5px;
 }
 
 .rightbarFollowButton{
@@ -91,4 +101,93 @@
 
 .rightbarFollowButton:focus{
     outline: none;
+}
+
+/* .rightbarFollowBackButton{
+    border: none;
+    background-color: #1872f2;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 20px;
+    
+} */
+
+/* .suggestionCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.rightbarSuggestions .suggestionCard img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightbarSuggestions .suggestionCard button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #1877f2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+
+.rightbarSuggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suggestionCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9; /* optional */
+}
+
+.suggestionInfo {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* push button to far right */
+  gap: 10px;
+}
+
+.suggestionCard img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.suggestionCardName {
+  font-weight: 500;
+  font-size: 14px;
+  color: green;
+  margin-right: 10px; /* space after username */
+}
+
+.suggestionCard button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #1877f2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0; /* prevent shrinking */
 }

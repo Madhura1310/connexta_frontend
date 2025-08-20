@@ -86,3 +86,18 @@
     cursor: pointer;
 }
 
+.topbarLogoutButton {
+  margin-left: 15px;
+  padding: 6px 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.topbarLogoutButton:hover {
+  background-color: #145dbf;
+}
