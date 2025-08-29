@@ -3,6 +3,8 @@ import{PermMedia,Label,Room,EmojiEmotions,Cancel} from "@mui/icons-material"
 import { useContext,useRef,useState } from "react";
 import {AuthContext} from  "../../context/AuthContext";
 import axios from "axios";
+import EmojiPicker from "emoji-picker-react";
+import { borderRadius } from "@mui/system";
 
 export default function Share() {
 
@@ -10,6 +12,9 @@ export default function Share() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const desc = useRef();
   const [file,setFile] = useState(null);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
+   ////////////////////////////////////////////
 
   // const submitHandler = async (e)=>{
   //   e.preventDefault()
@@ -38,7 +43,7 @@ export default function Share() {
 
   //     }
       
-  // }
+  // }/////////////////////////////////////////
 
   const submitHandler = async (e) => {
   e.preventDefault();
@@ -66,6 +71,22 @@ export default function Share() {
     console.log(err);
   }
 };
+
+const onEmojiClick = (emojiData) =>{
+  const cursorPos = desc.current.selectionStart;
+  const text = desc.current.value;
+  const newText = text.slice(0, cursorPos) + emojiData.emoji + text.slice(cursorPos);
+  desc.current.value = newText;
+
+
+  // put cursor after inseted emoji 
+  setTimeout(()=>{
+    desc.current.selectionStart = cursorPos + emojiData.emoji.length;
+    desc.current.selectionEnd = cursorPos + emojiData.emoji.length;
+    desc.current.focus(); 
+  }, 0);
+};
+
 
   return (
     <div className="share">
@@ -99,9 +120,28 @@ export default function Share() {
                 <Room  htmlColor="green" className="shareIcon"/>
                 <span className="shareOptionText">Location</span>
             </div>
-               <div className="shareOption">
+               <div className="shareOption"
+               onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+               styel={{ position: "relative"}}
+               >
                 <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
                 <span className="shareOptionText">Feelings</span>
+                   
+                
+            {showEmojiPicker && (
+              <div
+                style={{
+                    position: "absolute",
+                  top: "30%",
+                  zIndex: 1000,
+                  backgroundColor: "white",
+                  border: "1px solid #ddd",
+                  borderRadius: "8px",
+                }}
+              >
+                <EmojiPicker onEmojiClick={onEmojiClick} />
+              </div>
+            )}
             </div>
             <button className="shareButton" type="submit">Share</button>
         </div>
@@ -109,4 +149,8 @@ export default function Share() {
     </div>
   )
 }
+
+
+// ///////////////////////////////////////////////////////
+
 
