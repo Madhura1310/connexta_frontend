@@ -50,3 +50,17 @@
     margin: 0;
     list-style: none;
 }
+
+
+.jobsDropdown {
+  margin-left: 30px;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.jobsDropdown .sidebarListItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 5px;
+}

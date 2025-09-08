@@ -483,7 +483,9 @@ export default function Messenger() {
   return (
     <>
       <Topbar />
-      <div className="messenger">
+      <div className="messenger"  style={{
+    background: "url('/assets/chatbg.png') center/cover no-repeat"
+  }}>
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <input
@@ -571,3 +573,6 @@ export default function Messenger() {
     </>
   );
 }
+
+
+

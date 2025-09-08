@@ -21,11 +21,15 @@ export default function Login() {
   }
   console.log(user)
   return (
-    <div className='login'>
+    <div className='login'
+  style={{
+    background: "url('/assets/logo.png') center/cover no-repeat"
+  }}
+    >
         <div className="loginWrapper">
             <div className="loginLeft">
-                <h3 className='loginLogo'>Connexta</h3>
-                <span className='loginDesc'>connect with friends and world around you on Connexta. </span>
+                <h3 className='loginLogo'></h3>
+                <span className='loginDesc'></span>
                 </div>
                 <div className="loginRight" onSubmit={handleClick}>
                     <form className="loginBox">
@@ -49,3 +53,5 @@ export default function Login() {
     </div>
   )
 }
+
+

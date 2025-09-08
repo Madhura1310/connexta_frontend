@@ -30,11 +30,15 @@ export default function Register() {
     }
   }
   return (
-    <div className='login'>
+    <div className='login'
+     style={{
+    background: "url('/assets/logo.png') center/cover no-repeat"
+  }}
+    >
         <div className="loginWrapper">
             <div className="loginLeft">
-                <h3 className='loginLogo'>Connexta</h3>
-                <span className='loginDesc'>connect with friends and world around you on Connexta. </span>
+                <h3 className='loginLogo'></h3>
+                <span className='loginDesc'> </span>
                 </div>
                 <div className="loginRight">
                     <form className="loginBox" onSubmit={handleClick}>
@@ -67,3 +71,6 @@ export default function Register() {
     </div>
   )
 }
+
+
+
